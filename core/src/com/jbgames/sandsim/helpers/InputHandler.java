@@ -1,11 +1,20 @@
 package com.jbgames.sandsim.helpers;
 
 import com.badlogic.gdx.InputProcessor;
+import com.jbgames.sandsim.gameworld.GameWorld;
 
 public class InputHandler implements InputProcessor {
 
+    private GameWorld world;
+
+    public InputHandler(GameWorld world) {
+        this.world = world;
+    }
+
+
     @Override
     public boolean keyDown(int keycode) {
+        world.test();
         return false;
     }
 
@@ -21,7 +30,8 @@ public class InputHandler implements InputProcessor {
 
     @Override
     public boolean touchDown(int screenX, int screenY, int pointer, int button) {
-        return false;
+        world.onClick(screenX, screenY, pointer);
+        return true;
     }
 
     @Override

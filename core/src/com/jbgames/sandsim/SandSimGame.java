@@ -15,9 +15,6 @@ public class SandSimGame extends Game {
 		setScreen(new GameScreen());
 	}
 
-	@Override
-	public void render () {
-	}
 	
 	@Override
 	public void dispose () {
